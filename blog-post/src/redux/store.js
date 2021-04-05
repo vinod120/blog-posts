@@ -1,8 +1,11 @@
 import { createStore, combineReducers, applyMiddleware, compose } from "redux";
 import loginReducer from '../redux/login/reducer';
 import registerReducer from '../redux/register/reducer';
+import commentReducer from "./comments/commentReducer";
+import getDataReducer from "./data/getDataReducer";
+import likeReducer from "./likes/likesReducer";
 
-const rootReducer = combineReducers({login:loginReducer, register:loginReducer});
+const rootReducer = combineReducers({login:loginReducer, register:registerReducer, likes: likeReducer, comment: commentReducer, data: getDataReducer});
 
 const logger = (store) => (next) => (action) => {
   console.log("logger 1 dispatching action:", action);

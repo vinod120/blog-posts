@@ -11,7 +11,9 @@ function CreatePost() {
     const handleSubmit = ()=>{
         const obj = {
             image_url: image_url,
-            content: content
+            content: content,
+            author_id: "author_id",
+            author_name: "author_name" 
         }
         console.log("post data", obj)
     }
