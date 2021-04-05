@@ -7,6 +7,9 @@ import Avatar from '@material-ui/core/Avatar';
 import logo from '../assests/logo.png'
 import './styles.css';
 import { Divider } from '@material-ui/core';
+import { Link } from 'react-router-dom';
+import Button from '@material-ui/core/Button';
+import mainLogo from '../assests/main_logo.png';
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -56,10 +59,22 @@ function Dashboard() {
                 //     <Redirect to='/login' />
                 // </div>
                 // :
-                <div>
-                    <h1>Dashboard Page</h1>
-                    <button>add post</button>
-                    <Grid container spacing={3} style={{padding:'80px'}}>
+                <div style={{padding:'80px'}}>
+                    <div style={{display:'flex', justifyContent:'space-between', }}>
+                        <div>
+                            <img src={mainLogo} alt="main_logo" width="200px"/>
+                        </div>
+                        <Link to='/createPost' style={{textDecoration:'none'}}>
+                            <Button variant="contained" color="secondary">
+                                Create Post
+                            </Button>
+                        </Link>
+                    </div>
+                    <div style={{textAlign:'center', color: '#323d47', letterpacing: '.5px', marginBottom:'30px'}}>
+                        <h1>SalesBlink Blog</h1>
+                        <p>Sales, Cold Emails and everything in between...</p>
+                    </div>
+                    <Grid container spacing={3} >
                         {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((value) => (
                         <Grid item xs={12} md={6} lg={4} justify="space-between">
                             <div className='post'>

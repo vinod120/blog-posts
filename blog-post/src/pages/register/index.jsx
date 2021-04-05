@@ -20,7 +20,7 @@ function Register() {
             company_name: company,
             phone: phone
         }
-        console.log("login credentials", obj)
+        console.log("register data", obj)
     }
 
     return (
